@@ -18,10 +18,12 @@
  */
 
 (() => {
-    const imageListJson = 'json/loadBackground.imageList.d00f8cce.json';
+    const rootUrl = 'https://cdn.jsdelivr.net/gh/urlib/js_0@latest/';
+    const imageListJson = `${rootUrl}json/loadBackground.imageList.d00f8cce.json`;
+    const blankGif = 'data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
 
     const fetchImageList = () => {
-        let imageList = [{ fallback: 'blank.gif' }];
+        let imageList = [{ fallback: blankGif }];
         const reportError = err => {
             console.warn(`fetchImageList: An error occured: ${err.message}. Use blank.gif as fallback. `);
         };
@@ -46,7 +48,7 @@
     const isWebpSupported = (document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') == 0);
     const imageUrl = (() => {
         const image = randomChoice(backgroundImageList);
-        return isWebpSupported && image.webp ? image.webp : image.fallback;
+        return (isWebpSupported && image.webp) ? image.webp : image.fallback;
     })();
 
     window.addEventListener('load', () => {
