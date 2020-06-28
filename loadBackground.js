@@ -28,7 +28,6 @@
         const reportError = err => {
             console.warn(`fetchImageList: An error occured: ${err.message}. Use blank.gif as fallback. `);
         };
-        const fallbackImage = [{ fallback: blankGif }];
         return await fetch(imageListJson, {
             cache: 'no-store'
         })
@@ -37,12 +36,12 @@
                     return res.json();
                 } else {
                     reportError('Network Error');
-                    return fallbackImage;
+                    return undefined;
                 }
             })
             .catch(err => {
                 reportError(err);
-                return fallbackImage;
+                return undefined;
             });
     };
     const randomChoice = list => {
@@ -50,8 +49,9 @@
         return list[Math.floor(Math.random() * list.length)];
     };
     const getImageUrl = async () => {
+        // global backgroundImageList
         window.backgroundImageList = window.backgroundImageList || await fetchImageList();
-        const image = randomChoice(window.backgroundImageList);
+        const image = backgroundImageList ? randomChoice(backgroundImageList) : { fallback: blankGif };
         return (isWebpSupported && image.webp) ? image.webp : image.fallback;
     };
 
