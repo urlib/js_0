@@ -46,7 +46,7 @@
     const updateimgList = async () => {
         // global imgList, imgListUpdAt
         if (!window.imgListUpdAt) {
-            window.imgList = await fetchimgList();
+            window.imgList = await fetchimgList() || [{ fallback: blankGif }];
             window.imgListUpdAt = Date.now();
         } else {
             if (Date.now() - window.imgListUpdAt > retryDuration) {
@@ -71,12 +71,17 @@
                 imgCache[imgUrl] = URL.createObjectURL(img);
                 return imgCache[imgUrl];
             } else {
-                return randomChoice(imgCache);
+                const urls = Object.values(imgCache);
+                if (urls) {
+                    return randomChoice(urls);
+                } else {
+                    return blankGif;
+                }
             }
         }
     }
     const randomChoice = list => {
-        return list ? list[Math.floor(Math.random() * list.length)] : blankGif;
+        return list[Math.floor(Math.random() * list.length)];
     };
     const setBackgroundImage = async () => {
         const imgUrl = await (async () => {
