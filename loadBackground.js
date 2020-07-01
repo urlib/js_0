@@ -25,9 +25,9 @@
     const retryDuration = 1 * 1000; // ms, will *= 2 each unsuccessful attempt
 
     window.isWebpSupported = window.isWebpSupported || (document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0);
-    const fetchimgList = async () => {
+    const fetchImgList = async () => {
         const reportError = err => {
-            console.warn(`fetchimgList: An error occured: ${err.message}. Use blank.gif as fallback. `);
+            console.warn(`fetchImgList: An error occured: ${err.message}. Use blank.gif as fallback. `);
         };
         return await fetch(imgListJson, {
             cache: 'no-store'
@@ -43,14 +43,14 @@
             return undefined;
         });
     };
-    const updateimgList = async () => {
+    const updImgList = async () => {
         // global imgList, imgListUpdAt
         if (!window.imgListUpdAt) {
-            window.imgList = await fetchimgList() || [{ fallback: blankGif }];
+            window.imgList = await fetchImgList() || [{ fallback: blankGif }];
             window.imgListUpdAt = Date.now();
         } else {
             if (Date.now() - window.imgListUpdAt > retryDuration) {
-                const newList = await fetchimgList();
+                const newList = await fetchImgList();
                 if (newList) {
                     window.imgList = newList;
                     window.imgListUpdAt = Date.now();
@@ -63,19 +63,19 @@
     const getImgBlobUrl = async imgUrl => {
         // global imgCache
         window.imgCache = window.imgCache || {};
-        if (imgUrl in imgCache) {
-            return imgCache[imgUrl];
+        if (imgUrl === blankGif) {
+            return blankGif;
         } else {
-            const img = await fetch(imgUrl, { cache: 'force-cache' }).then(res => res.blob()).catch(() => undefined);
-            if (img) {
-                imgCache[imgUrl] = URL.createObjectURL(img);
+            if (imgUrl in imgCache) {
                 return imgCache[imgUrl];
             } else {
-                const urls = Object.values(imgCache);
-                if (urls) {
-                    return randomChoice(urls);
+                const img = await fetch(imgUrl, { cache: 'force-cache' }).then(res => res.blob()).catch(() => undefined);
+                if (img) {
+                    imgCache[imgUrl] = URL.createObjectURL(img);
+                    return imgCache[imgUrl];
                 } else {
-                    return blankGif;
+                    const urls = Object.values(imgCache);
+                    return randomChoice(urls);
                 }
             }
         }
@@ -83,19 +83,11 @@
     const randomChoice = list => {
         return list[Math.floor(Math.random() * list.length)];
     };
-    const setBackgroundImage = async () => {
+    const setBackgroundImg = async () => {
         const imgUrl = await (async () => {
-            await updateimgList();
-            const imgInfo = randomChoice(imgList);
-            if (imgInfo === blankGif) {
-                return imgInfo;
-            } else {
-                if (isWebpSupported && imgInfo.webp) {
-                    return getImgBlobUrl(imgInfo.webp);
-                } else {
-                    return imgInfo.fallback;
-                }
-            }
+            await updImgList();
+            const img = randomChoice(imgList);
+            return await getImgBlobUrl(isWebpSupported && img.webp ? img.webp : img.fallback);
         })();
         const style = document.body.style;
         style.backgroundImage = `url(${imgUrl})`;
@@ -104,10 +96,10 @@
     }
 
     window.addEventListener('load', async () => {
-        await setBackgroundImage();
-        setInterval(async () => { await setBackgroundImage(); }, 20 * 1000);
+        await setBackgroundImg();
+        setInterval(async () => { await setBackgroundImg(); }, 20 * 1000);
     });
     window.addEventListener('online', async () => {
-        await setBackgroundImage();
+        await setBackgroundImg();
     });
 })();
