@@ -22,7 +22,7 @@
     const rootUrl = 'https://cdn.jsdelivr.net/gh/urlib/js_0@master/';
     const imgListJson = `${rootUrl}json/loadBackground.imageList.d00f8cce.json`;
     const blankGif = 'data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
-    const retryDuration = 1 * 1000; // ms, will *= 2 each unsuccessful attempt
+    const retryDuration = 20 * 1000; // ms, will *= 2 each unsuccessful attempt
 
     window.isWebpSupported = window.isWebpSupported || (document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0);
     const fetchImgList = async () => {
@@ -49,13 +49,13 @@
             window.imgList = await fetchImgList() || [{ fallback: blankGif }];
             window.imgListUpdAt = Date.now();
         } else {
-            if (Date.now() - window.imgListUpdAt > retryDuration) {
+            if (Date.now() - window.imgListUpdAt >= retryDuration) {
                 const newList = await fetchImgList();
                 if (newList) {
                     window.imgList = newList;
                     window.imgListUpdAt = Date.now();
                 } else {
-                    retryDuration *= 2;
+                    setTimeout(async () => { await updImgList(); }, retryDuration);
                 }
             }
         }
