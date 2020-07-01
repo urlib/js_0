@@ -22,7 +22,7 @@
     const rootUrl = 'https://cdn.jsdelivr.net/gh/urlib/js_0@master/';
     const imgListJson = `${rootUrl}json/loadBackground.imageList.d00f8cce.json`;
     const blankGif = 'data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
-    const retryDuration = 20 * 1000; // ms, will *= 2 each unsuccessful attempt
+    const retryDuration = 20 * 1000; // ms
 
     window.isWebpSupported = window.isWebpSupported || (document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0);
     const fetchImgList = async () => {
