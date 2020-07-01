@@ -30,19 +30,17 @@
         };
         return await fetch(imageListJson, {
             cache: 'no-store'
-        })
-            .then(res => {
-                if (res.ok) {
-                    return res.json();
-                } else {
-                    reportError('Network Error');
-                    return undefined;
-                }
-            })
-            .catch(err => {
-                reportError(err);
+        }).then(res => {
+            if (res.ok) {
+                return res.json();
+            } else {
+                reportError('Network Error');
                 return undefined;
-            });
+            }
+        }).catch(err => {
+            reportError(err);
+            return undefined;
+        });
     };
     const randomChoice = list => {
         list.push(list.shift());
