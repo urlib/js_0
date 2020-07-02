@@ -10,7 +10,7 @@
  * The latest version can always be found here:
  * https://github.com/urlib/js_0/blob/master/loadBackground.js
  * 
- * You can Load this file from jsDelivr (faster and more reliable):
+ * You can Load this file from jsDelivr (fast and reliable):
  * https://cdn.jsdelivr.net/gh/urlib/js_0@latest/loadBackground.js
  * 
  * There is also a minified version (thanks to jsDelivr):
@@ -25,7 +25,7 @@
     const imgListBaseUrl = 'https://cdn.jsdelivr.net/gh/urlib/js_0@master/json/loadBackground.imageList.';
     const imgLists = ['d00f8cce.json', '8ca2cd3a.json'];
     const blankGif = 'data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
-    const retryDuration = 20 * 1000; // ms
+    const refreshDuration = 20 * 1000; // ms
     window.isWebpSupported = window.isWebpSupported || (document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0);
 
     const fetchImgList = async () => {
@@ -50,16 +50,16 @@
     const updImgList = async () => {
         // global imgList, imgListUpdAt
         if (!window.imgListUpdAt) {
-            window.imgList = await fetchImgList() || [{ fallback: blankGif }];
+            window.imgList = await fetchImgList();
             window.imgListUpdAt = Date.now();
         } else {
-            if (Date.now() - window.imgListUpdAt >= retryDuration) {
+            if (Date.now() - imgListUpdAt >= refreshDuration) {
                 const newList = await fetchImgList();
                 if (newList) {
-                    window.imgList = newList;
-                    window.imgListUpdAt = Date.now();
+                    imgList = newList;
+                    imgListUpdAt = Date.now();
                 } else {
-                    setTimeout(async () => { await updImgList(); }, retryDuration);
+                    setTimeout(async () => { await updImgList(); }, refreshDuration);
                 }
             }
         }
@@ -87,7 +87,7 @@
     const setBackgroundImg = async () => {
         const imgUrl = await (async () => {
             await updImgList();
-            const img = randomChoice(imgList);
+            const img = imgList ? randomChoice(imgList) : { fallback: blankGif };
             return await getImgBlobUrl(isWebpSupported && img.webp ? img.webp : img.fallback);
         })();
         const style = document.body.style;
