@@ -7,14 +7,13 @@
  * 
  * Awesome background images for ISAB pages.
  * 
- * The latest version can always be found here:
- * https://github.com/urlib/js_0/blob/master/loadBackground.js
+ * We have moved to [npm](https://www.npmjs.com/package/32ae08ef). This file is no longer maintained. 
  * 
  * You can Load this file from jsDelivr (fast and reliable):
- * https://cdn.jsdelivr.net/gh/urlib/js_0@latest/loadBackground.js
+ * https://cdn.jsdelivr.net/npm/32ae08ef@latest/loadBackground.js
  * 
  * There is also a minified version (thanks to jsDelivr):
- * https://cdn.jsdelivr.net/gh/urlib/js_0@latest/loadBackground.min.js
+ * https://cdn.jsdelivr.net/npm/32ae08ef@latest/loadBackground.min.js
  */
 
 (() => {
@@ -28,7 +27,7 @@
     window.isWebpSupported = window.isWebpSupported || (document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0);
 
     const fetchImgList = async () => {
-        const getImgListUrl = () => `https://cdn.jsdelivr.net/gh/urlib/js_0@master/json/loadBackground.imageList.${randomChoice(imgLists)}.json`;
+        const getImgListUrl = () => `https://cdn.jsdelivr.net/npm/32ae08ef@latest/json/loadBackground.imageList.${randomChoice(imgLists)}.json`;
         const reportError = err => {
             console.warn(`fetchImgList: An error occured: ${err.message}. Use blank.gif as fallback. `);
         };
