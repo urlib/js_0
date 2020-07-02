@@ -1,0 +1,27 @@
+[
+    {
+        "name": "nature-3082832",
+        "fallback": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/ee/2e/08/10/ee2e08104700cabde2e81a3081dc44492ba4e6fc46571666aac11a487af5c6a9.jpg",
+        "webp": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/ec/a8/3a/2c/eca83a2ca43b02c4cdaa7e30c56c1b4209c87dbf105cfb66c95453aaf2664f3c.webp"
+    },
+    {
+        "name": "planet-1702788",
+        "fallback": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/6e/02/1e/1e/6e021e1e414812dd838e3dc1b4dd4bce87b34b797d56349db2f5ef38ef41cb28.jpg",
+        "webp": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/48/6f/81/ef/486f81efb58df17bec554e35034d8ceabfd7302c6674e0dba5cd89ac170bece0.webp"
+    },
+    {
+        "name": "thunderstorm-3625405",
+        "fallback": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/d7/96/4a/31/d7964a3163b175192d8ea22b727354b3a7115161c9782404fc16caf8ba384f81.jpg",
+        "webp": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/39/07/ad/4f/3907ad4f15e48ac406517f85420a294437427e4063077fb02b27d8022c2f898c.webp"
+    },
+    {
+        "name": "universe-2742113",
+        "fallback": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/fe/27/1d/0c/fe271d0c25ce8588f98f27d0b047863c4225d5522e8f8740f23a0c3c514619b2.jpg",
+        "webp": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/a1/58/d3/06/a158d30667ea4e41fda1d4a4d2e93c8f77fde58c140c5a1aeb44f7939acaf3ef.webp"
+    },
+    {
+        "name": "watercolour-4116932",
+        "fallback": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/c4/2f/4f/01/c42f4f0153b80bd563c49ad9997e8b7566dc870a88aa1bdb248840edcaa8f88f.png",
+        "webp": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/dc/e7/02/f2/dce702f221f3e3914b6882314760b19d4f885884c9a8ef52afd009c0da9f7f2b.webp"
+    }
+]

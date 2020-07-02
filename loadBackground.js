@@ -22,14 +22,13 @@
     const randomChoice = list => list[Math.floor(Math.random() * list.length)];
 
     // Configurations
-    const imgListBaseUrl = 'https://cdn.jsdelivr.net/gh/urlib/js_0@master/json/loadBackground.imageList.';
-    const imgLists = ['d00f8cce.json', '8ca2cd3a.json'];
+    const imgLists = ['d00f8cce', '8ca2cd3a', '3072a9bf', 'e0b928fc'];
     const blankGif = 'data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
     const refreshDuration = 20 * 1000; // ms
     window.isWebpSupported = window.isWebpSupported || (document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0);
 
     const fetchImgList = async () => {
-        const getImgListUrl = () => `${imgListBaseUrl}${randomChoice(imgLists)}`;
+        const getImgListUrl = () => `https://cdn.jsdelivr.net/gh/urlib/js_0@master/json/loadBackground.imageList.${randomChoice(imgLists)}.json`;
         const reportError = err => {
             console.warn(`fetchImgList: An error occured: ${err.message}. Use blank.gif as fallback. `);
         };

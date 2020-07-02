@@ -1,0 +1,72 @@
+[
+    {
+        "name": "abstract-2468874",
+        "fallback": "https://cdn.jsdelivr.net/gh/urlib/bin_1@4abdf255/2b/c4/47/f6/2bc447f66244dfb278248fa84dd497cefe57b541042c252557ac6d5905db27fe.jpg",
+        "webp": "https://cdn.jsdelivr.net/gh/urlib/bin_1@4abdf255/bc/e3/8f/cc/bce38fcc58b9562e17e1a26e8dbed3b4cc7e97718e25691fc4ae5bafcb61d02e.webp"
+    },
+    {
+        "name": "color-2174045",
+        "fallback": "https://cdn.jsdelivr.net/gh/urlib/bin_1@4abdf255/c4/1b/75/e1/c41b75e12d3e711223d2c1f2a7086f0af40e543630533781807597458ebaf32b.png",
+        "webp": "https://cdn.jsdelivr.net/gh/urlib/bin_1@4abdf255/a4/75/f5/70/a475f570d33d23514abd2fd4e482f4cf1e4f169d052575a66db01b9c42b9f7c9.webp"
+    },
+    {
+        "name": "thunderstorm-3625405",
+        "fallback": "https://cdn.jsdelivr.net/gh/urlib/bin_1@4abdf255/90/a3/54/fe/90a354fee30bb4529825ce6c1c299c394edd712d2c67ab50f52ed7d2f936c46e.jpg",
+        "webp": "https://cdn.jsdelivr.net/gh/urlib/bin_1@4abdf255/ec/fa/c7/2e/ecfac72e7012f2e3d610c551c120aec40335eb9b9d39d15a003d5587054a47e5.webp"
+    },
+    {
+        "name": "triangles-1430105",
+        "fallback": "https://cdn.jsdelivr.net/gh/urlib/bin_1@4abdf255/4b/a6/7c/e1/4ba67ce1f6eda6dd678f943446b8744fe9f42ed753f6bc1f4be108794a0b5e47.png",
+        "webp": "https://cdn.jsdelivr.net/gh/urlib/bin_1@4abdf255/2b/bb/ea/ea/2bbbeaeafa18877499bfa9af4c4d88e81d43d0906a5ab2205a960a509aca7127.webp"
+    },
+    {
+        "name": "watercolour-4116932",
+        "fallback": "https://cdn.jsdelivr.net/gh/urlib/bin_1@4abdf255/c4/2f/4f/01/c42f4f0153b80bd563c49ad9997e8b7566dc870a88aa1bdb248840edcaa8f88f.png",
+        "webp": "https://cdn.jsdelivr.net/gh/urlib/bin_1@4abdf255/dc/e7/02/f2/dce702f221f3e3914b6882314760b19d4f885884c9a8ef52afd009c0da9f7f2b.webp"
+    },
+    {
+        "name": "cat-1045782",
+        "fallback": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/f8/e0/bf/f0/f8e0bff05329100bc3dee2605b2a22086bcc3d5e8f59b1fee4231dba4adce9bf.jpg",
+        "webp": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/68/8e/19/a9/688e19a9dd62e19ae4211245bec1a8863fd51aee2a27fe131c4e04650edca303.webp"
+    },
+    {
+        "name": "cat-2083492",
+        "fallback": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/6e/8a/f5/86/6e8af5864f53b19cc848e61dbf61c8281b880b0b7ec796cfbf8d8e2001e3a283.jpg",
+        "webp": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/53/fc/4d/be/53fc4dbe10edaba28252b946bed462c09f05be03febb5300563e999c85fcb674.webp"
+    },
+    {
+        "name": "cat-4611189",
+        "fallback": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/81/29/16/11/81291611dbf7b1b353480287b19b03977dac9d6ef2b23731d4670543ffd31bb5.jpg",
+        "webp": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/14/0b/dd/59/140bdd595a9b8d41e128343df2a5ec569081d78a1ea98993c9290c044ae690cf.webp"
+    },
+    {
+        "name": "cat-694730",
+        "fallback": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/bd/53/e6/b4/bd53e6b4fd0a7eb85ed72204fbb454c15f4202b5584ebafa5c769088ce0a69e1.jpg",
+        "webp": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/90/9c/a8/c8/909ca8c83b210fe7a829132203937d05a106f05f22f1ce34cc53a5a43d04f30b.webp"
+    },
+    {
+        "name": "cats-eyes-2671903",
+        "fallback": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/33/84/f6/7d/3384f67dc09b0044037865f2b7b9616cf7b3f0f96a2482880c29482f87e0c77f.jpg",
+        "webp": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/2a/6f/05/79/2a6f0579b1b7f9b052bcb78a29a7b0d542ebbb9bd30c5c822d4aa3c85c81e353.webp"
+    },
+    {
+        "name": "eclipse-1492818",
+        "fallback": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/43/ad/df/ba/43addfba965f358089eaab171c48878c64f1c8df395e76fd993037cf39f08519.jpg",
+        "webp": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/a5/b4/f0/aa/a5b4f0aa69f5daee3734cbc1ce3ef65183309fc3562a1588a817838de6c4cef0.webp"
+    },
+    {
+        "name": "milky-way-2675322",
+        "fallback": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/f2/7f/1c/05/f27f1c05f51185280eaed2eceef107cc00d2d999cfc9080b3d478504af1f5393.jpg",
+        "webp": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/c2/2a/82/d8/c22a82d8edae2b006a9ab0ae201d66590008f2151af91691234f9485f5dfa982.webp"
+    },
+    {
+        "name": "milky-way-984050",
+        "fallback": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/43/c5/33/55/43c53355ba52c64174f976144294d716c1fb39f5a541b1cd94c322f942caca05.jpg",
+        "webp": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/2f/02/5f/a1/2f025fa15868adcb7c0ecf7a2158658a7676c96c2a85eb53fd781450b6aae85e.webp"
+    },
+    {
+        "name": "nature-2609647",
+        "fallback": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/35/81/cf/73/3581cf733ca4a2e7b3458cb6f3b2490e768eb09f7ed0b7c4077bff5793ff4359.jpg",
+        "webp": "https://cdn.jsdelivr.net/gh/urlib/bin_1@a7703963/d8/ac/79/a7/d8ac79a74207f966c3bd59d219d0f0b745524eef343be1e74e95cb764434c640.webp"
+    }
+]
